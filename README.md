@@ -76,8 +76,8 @@ Os demais componentes reutilizam essa variável. Portanto, mudar esse único val
 
 ## Imagem principal
 
-O eVTOL é o arquivo `evtol-concept.webp`. Para substituí-lo sem editar o HTML, envie outra imagem com fundo transparente e o mesmo nome. Para manter a versão anterior, use outro nome e atualize esta linha em `index.html`:
+O eVTOL está incorporado diretamente no `index.html` como uma imagem WebP em Base64. Essa solução evita arquivos faltando na publicação. Para futuras substituições, a organização mais simples é enviar a nova imagem ao repositório — por exemplo, `nova-imagem.webp` — e trocar todo o atributo `src` da tag `evtol-image` por:
 
 ```html
-<img class="evtol-image" src="evtol-concept.webp" alt="">
+src="nova-imagem.webp"
 ```
