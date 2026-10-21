@@ -2,82 +2,71 @@
 
 Site estático publicado em <https://gth14.github.io/>.
 
-## Como alterar os textos
-
-1. Abra o repositório no GitHub e clique em `index.html`.
-2. Clique no ícone de lápis (`Edit this file`).
-3. Procure o texto com `Ctrl + F` e altere somente o conteúdo entre as tags HTML.
-4. Clique em `Commit changes`, escreva uma descrição curta e confirme.
-5. Aguarde cerca de um minuto e atualize o site com `Ctrl + F5`.
-
-Exemplo:
-
-```html
-<h1>Transformo problemas complexos em engenharia que <em>avança.</em></h1>
-```
-
-Pode ser alterado para:
-
-```html
-<h1>Engenharia mecânica, aerodinâmica e <em>simulação.</em></h1>
-```
-
-Os principais textos estão nestas classes:
-
-- `hero h1`: título principal;
-- `hero-intro`: apresentação abaixo do título;
-- `section-heading`: títulos e introduções das seções;
-- `project-card`: nome, resumo e detalhes de cada projeto;
-- `timeline-item`: formação e experiência profissional;
-- `site-footer`: frase final.
-
-Evite apagar os sinais `<`, `>` e `/`, pois eles estruturam a página. Para adicionar um novo projeto, copie um bloco completo de `<details class="project-card">` até `</details>`, cole abaixo do anterior e então altere os textos.
-
-## Como criar mais páginas
-
-Cada arquivo `.html` pode ser uma página independente. Por exemplo:
+## Estrutura
 
 ```text
-index.html       página inicial
-projetos.html    página de projetos
-sobre.html       página de apresentação
-contato.html     página de contato
+index.html        página inicial e resumo do portfólio
+projetos.html     projetos acadêmicos e técnicos
+trajetoria.html   formação e experiência profissional
+styles.css        identidade visual e layout das três páginas
 ```
 
-O processo mais simples é:
+O menu no topo de cada página liga esses arquivos entre si. Ao adicionar uma nova página, inclua o respectivo link nos três menus para manter a navegação consistente.
 
-1. No repositório, abra `index.html` e copie o conteúdo.
-2. Use `Add file` → `Create new file`.
-3. Digite o nome, como `projetos.html`, cole o conteúdo e remova as seções que não serão usadas.
-4. Ajuste o título da aba dentro de `<title>...</title>`.
-5. Troque os links do menu para os arquivos correspondentes.
+## Como alterar os textos
 
-Exemplo de menu entre páginas:
+1. Abra o arquivo desejado no GitHub.
+2. Clique no ícone de lápis (`Edit this file`).
+3. Use `Ctrl + F` para localizar o texto.
+4. Altere somente o conteúdo entre as tags HTML.
+5. Clique em `Commit changes` e confirme.
+6. Aguarde cerca de um minuto e atualize o site com `Ctrl + F5`.
+
+Evite apagar os sinais `<`, `>` e `/`, pois eles estruturam a página.
+
+## Como adicionar as imagens dos projetos
+
+Em `projetos.html`, cada projeto contém um bloco como este:
 
 ```html
-<nav>
-  <a href="index.html">Início</a>
-  <a href="projetos.html">Projetos</a>
-  <a href="sobre.html">Sobre</a>
-</nav>
+<figure class="project-figure">
+  <figcaption>Imagem do projeto · a inserir</figcaption>
+</figure>
 ```
 
-Em qualquer página, `href="index.html#trajetoria"` abre diretamente a seção `trajetoria` da página inicial.
+Depois de enviar a imagem ao repositório, preferencialmente para uma pasta `images`, substitua o conteúdo por:
+
+```html
+<figure class="project-figure">
+  <img src="images/nome-da-imagem.webp" alt="Descrição objetiva do que aparece na imagem">
+</figure>
+```
+
+Use nomes sem espaços e imagens em `.webp` ou `.jpg`. Uma proporção próxima de 16:9 funciona melhor no layout atual.
+
+## Como adicionar um novo projeto
+
+1. Em `projetos.html`, copie um bloco completo de `<article class="project-entry">` até `</article>`.
+2. Cole-o antes do fechamento do contêiner principal.
+3. Altere o `id`, o número, o título, os metadados, os textos e as tags.
+4. Se quiser destacá-lo na página inicial, copie também um bloco `project-preview` de `index.html` e aponte o link para o novo `id`.
+
+Exemplo de link para uma seção específica:
+
+```html
+<a href="projetos.html#novo-projeto">Novo projeto</a>
+```
 
 ## Identidade visual
 
-As cores estão no início do bloco `<style>`, dentro de `:root`. A cor principal atual é:
+As cores ficam no início de `styles.css`, dentro de `:root`. A cor principal é:
 
 ```css
---acid: #0065bd;
+--blue: #0065bd;
 ```
 
-Os demais componentes reutilizam essa variável. Portanto, mudar esse único valor altera a maior parte dos destaques do site.
+As outras variáveis controlam fundo, texto, linhas e tons auxiliares. A maior parte do site pode ser ajustada alterando apenas essas variáveis.
 
 ## Imagem principal
 
-O eVTOL está incorporado diretamente no `index.html` como uma imagem WebP em Base64. Essa solução evita arquivos faltando na publicação. Para futuras substituições, a organização mais simples é enviar a nova imagem ao repositório — por exemplo, `nova-imagem.webp` — e trocar todo o atributo `src` da tag `evtol-image` por:
-
-```html
-src="nova-imagem.webp"
-```
+O eVTOL da página inicial permanece incorporado no próprio `index.html` como uma imagem WebP em Base64. As imagens futuras dos projetos podem ser mantidas como arquivos separados na pasta `images`, o que facilita a atualização.
