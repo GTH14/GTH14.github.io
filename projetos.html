@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07121d">
+  <meta name="description" content="Projetos de Gabriel Haga em aerodinâmica, dinâmica estrutural, CFD, otimização e pesquisa experimental.">
+  <title>Projetos | Gabriel Haga</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-page">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="topbar">
+    <nav class="nav-shell" aria-label="Navegação principal">
+      <a class="wordmark" href="index.html" aria-label="Página inicial de Gabriel Haga">GH<span>.</span></a>
+      <div class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="projetos.html" aria-current="page">Projetos</a>
+        <a href="trajetoria.html">Trajetória</a>
+      </div>
+      <a class="nav-external" href="https://github.com/GTH14" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <header class="page-hero">
+      <div class="page-hero-shell">
+        <span class="route-label">Portfólio / Projetos</span>
+        <h1>Projetos de <em>engenharia</em>.</h1>
+        <p class="page-intro">Trabalhos acadêmicos e técnicos em que participei diretamente da modelagem, implementação, análise ou validação. O foco aqui é mostrar o que foi feito e quais critérios foram usados para avaliar os resultados.</p>
+      </div>
+    </header>
+
+    <div class="page-body">
+      <div class="section-shell">
+        <article class="project-entry" id="otimizacao-helices">
+          <aside class="project-aside">
+            <span class="project-number">Projeto 01</span>
+            <h2>Otimização de pás de hélice</h2>
+            <div class="project-meta">
+              <div><span class="meta-label">Contexto</span><span>Tese de mestrado · TUM</span></div>
+              <div><span class="meta-label">Período</span><span>Jan—Ago 2025</span></div>
+              <div><span class="meta-label">Resultado</span><span>Nota 1,0 · máxima no sistema alemão</span></div>
+            </div>
+          </aside>
+
+          <div class="project-content">
+            <figure class="project-figure">
+              <!-- A imagem deste projeto poderá substituir o conteúdo abaixo. -->
+              <figcaption>Imagem do projeto · a inserir</figcaption>
+            </figure>
+            <p class="project-lead">Desenvolvimento de uma metodologia computacional para modificar geometrias de pás e avaliar seu desempenho aerodinâmico e suas cargas não estacionárias em voo de avanço.</p>
+            <div class="project-columns">
+              <div>
+                <h3>Desenvolvimento</h3>
+                <p>Implementei em Python um gerador paramétrico de malhas para geometrias de hélices e sua integração com o DUST. A estrutura conectou parâmetros geométricos, execução das simulações e algoritmos evolutivos para explorar diferentes configurações de pá.</p>
+              </div>
+              <div>
+                <h3>Modelo e validação</h3>
+                <p>O DUST emprega métodos invíscidos de média fidelidade, incluindo Vortex Lattice Method, Lifting Line e Vortex Particle Method para a esteira. A integração foi verificada em casos de voo estacionário e de avanço, comparando resultados com dados experimentais e estudos CFD RANS publicados.</p>
+              </div>
+            </div>
+            <div class="tag-list"><span>Python</span><span>DUST</span><span>DEAP</span><span>VLM</span><span>Lifting Line</span><span>VPM</span><span>Otimização evolutiva</span></div>
+          </div>
+        </article>
+
+        <article class="project-entry" id="fem-turbomaquinas">
+          <aside class="project-aside">
+            <span class="project-number">Projeto 02</span>
+            <h2>FEM de pá de compressor</h2>
+            <div class="project-meta">
+              <div><span class="meta-label">Contexto</span><span>FEM para turbomáquinas · TUM</span></div>
+              <div><span class="meta-label">Software</span><span>Abaqus</span></div>
+              <div><span class="meta-label">Análises</span><span>Mecânica, térmica e modal</span></div>
+            </div>
+          </aside>
+
+          <div class="project-content">
+            <figure class="project-figure">
+              <!-- A imagem deste projeto poderá substituir o conteúdo abaixo. -->
+              <figcaption>Malha e modos de vibração · a inserir</figcaption>
+            </figure>
+            <p class="project-lead">Análise estrutural e dinâmica de uma pá do rotor de um compressor, considerando tanto o carregamento mecânico quanto o efeito do gradiente de temperatura.</p>
+            <div class="project-columns">
+              <div>
+                <h3>Preparação do modelo</h3>
+                <p>Criei a malha da geometria, apliquei as condições de contorno e automatizei o estudo de convergência. Foram montadas duas representações: uma exclusivamente mecânica e outra termomecânica, com transferência de calor e distribuição de temperatura.</p>
+              </div>
+              <div>
+                <h3>Análise dos resultados</h3>
+                <p>Comparei os resultados numéricos com um modelo analítico simplificado, investiguei modos fletores e torcionais e confrontei as respostas dos modelos mecânico e termomecânico. Um diagrama de Campbell foi utilizado para identificar regiões de rotação afastadas de ressonâncias.</p>
+              </div>
+            </div>
+            <div class="tag-list"><span>Abaqus</span><span>FEM</span><span>Convergência de malha</span><span>Termomecânica</span><span>Análise modal</span><span>Campbell</span></div>
+          </div>
+        </article>
+
+        <article class="project-entry" id="cfd-turbomaquinas">
+          <aside class="project-aside">
+            <span class="project-number">Projeto 03</span>
+            <h2>CFD RANS de rotores</h2>
+            <div class="project-meta">
+              <div><span class="meta-label">Contexto</span><span>CFD para turbomáquinas · TUM</span></div>
+              <div><span class="meta-label">Software</span><span>Ansys CFX</span></div>
+              <div><span class="meta-label">Comparação</span><span>Ponta livre × rotor carenado</span></div>
+            </div>
+          </aside>
+
+          <div class="project-content">
+            <figure class="project-figure">
+              <!-- A imagem deste projeto poderá substituir o conteúdo abaixo. -->
+              <figcaption>Campos de pressão e escoamento · a inserir</figcaption>
+            </figure>
+            <p class="project-lead">Comparação do desempenho e das estruturas de escoamento de um rotor com ponta livre e de um rotor carenado por meio de simulações CFD RANS.</p>
+            <div class="project-columns">
+              <div>
+                <h3>Modelagem</h3>
+                <p>Foram desenvolvidas malhas adequadas às duas configurações e selecionadas condições de contorno consistentes com o caso físico. O pós-processamento começou por grandezas integrais, como a razão de pressão total.</p>
+              </div>
+              <div>
+                <h3>Investigação local</h3>
+                <p>A análise avançou para a distribuição de pressão ao longo das pás e para os campos locais de escoamento. A comparação evidenciou o vórtice de fuga de ponta na configuração sem carenagem, mecanismo ausente ou significativamente alterado no rotor carenado.</p>
+              </div>
+            </div>
+            <div class="tag-list"><span>Ansys CFX</span><span>CFD RANS</span><span>Geração de malha</span><span>Turbomáquinas</span><span>Tip leakage vortex</span><span>Pós-processamento</span></div>
+          </div>
+        </article>
+
+        <article class="project-entry" id="evtol-tunel-vento">
+          <aside class="project-aside">
+            <span class="project-number">Projeto 04</span>
+            <h2>Interação asa-hélice em eVTOL</h2>
+            <div class="project-meta">
+              <div><span class="meta-label">Contexto</span><span>Tese semestral · TUM</span></div>
+              <div><span class="meta-label">Período</span><span>Mai—Nov 2023</span></div>
+              <div><span class="meta-label">Método</span><span>Ensaio em túnel de vento</span></div>
+            </div>
+          </aside>
+
+          <div class="project-content">
+            <figure class="project-figure">
+              <!-- A imagem deste projeto poderá substituir o conteúdo abaixo. -->
+              <figcaption>Configuração experimental eVTOL · a inserir</figcaption>
+            </figure>
+            <p class="project-lead">Investigação experimental da interação aerodinâmica entre asa e hélice em uma configuração eVTOL com propulsor basculante.</p>
+            <div class="project-columns">
+              <div>
+                <h3>Tratamento de dados</h3>
+                <p>Desenvolvi rotinas em MATLAB para organizar, processar e visualizar os dados obtidos nos ensaios em túnel de vento, permitindo comparar condições de operação e configurações do conjunto asa-hélice.</p>
+              </div>
+              <div>
+                <h3>Objetivo da análise</h3>
+                <p>As medições foram examinadas para compreender como o campo induzido pela hélice altera o comportamento aerodinâmico da asa, especialmente em uma arquitetura relevante para transição e voo de aeronaves eVTOL.</p>
+              </div>
+            </div>
+            <div class="tag-list"><span>MATLAB</span><span>Túnel de vento</span><span>eVTOL</span><span>Aerodinâmica experimental</span><span>Processamento de dados</span></div>
+          </div>
+        </article>
+
+        <article class="project-entry" id="toolbox-dinamica-voo">
+          <aside class="project-aside">
+            <span class="project-number">Projeto 05</span>
+            <h2>Toolbox de dinâmica de voo</h2>
+            <div class="project-meta">
+              <div><span class="meta-label">Contexto</span><span>Estudante assistente · TUM</span></div>
+              <div><span class="meta-label">Período</span><span>Set 2023—Jun 2024</span></div>
+              <div><span class="meta-label">Ambiente</span><span>MATLAB</span></div>
+            </div>
+          </aside>
+
+          <div class="project-content">
+            <figure class="project-figure">
+              <!-- A imagem deste projeto poderá substituir o conteúdo abaixo. -->
+              <figcaption>Arquitetura da toolbox · a inserir</figcaption>
+            </figure>
+            <p class="project-lead">Ampliação de uma toolbox MATLAB empregada no projeto e na análise de controladores de aeronaves.</p>
+            <div class="project-columns">
+              <div>
+                <h3>Funcionalidade</h3>
+                <p>Desenvolvi de forma independente o suporte a parâmetros ajustáveis, permitindo que propriedades selecionadas do modelo fossem modificadas durante o fluxo de análise sem reconstruir toda a representação.</p>
+              </div>
+              <div>
+                <h3>Verificação</h3>
+                <p>A implementação foi testada em modelos com poucas variáveis de estado para verificar o comportamento da nova funcionalidade e sua integração com a estrutura existente da toolbox.</p>
+              </div>
+            </div>
+            <div class="tag-list"><span>MATLAB</span><span>Dinâmica de voo</span><span>Controle</span><span>Desenvolvimento de software</span><span>Testes</span></div>
+          </div>
+        </article>
+
+        <article class="project-entry" id="levitacao-acustica">
+          <aside class="project-aside">
+            <span class="project-number">Projeto 06</span>
+            <h2>Levitação acústica</h2>
+            <div class="project-meta">
+              <div><span class="meta-label">Contexto</span><span>Iniciação científica · FAPESP/USP</span></div>
+              <div><span class="meta-label">Período</span><span>Ago 2021—Ago 2022</span></div>
+              <div><span class="meta-label">Método</span><span>Simulação e experimento</span></div>
+            </div>
+          </aside>
+
+          <div class="project-content">
+            <figure class="project-figure">
+              <!-- A imagem deste projeto poderá substituir o conteúdo abaixo. -->
+              <figcaption>Arranjo de levitação acústica · a inserir</figcaption>
+            </figure>
+            <p class="project-lead">Estudo da dinâmica de partículas esféricas submetidas a um campo de levitação acústica, combinando modelo computacional e observação experimental.</p>
+            <div class="project-columns">
+              <div>
+                <h3>Modelo computacional</h3>
+                <p>Desenvolvi em MATLAB uma representação da dinâmica das partículas para investigar sua resposta às forças acústicas e acompanhar o comportamento previsto sob diferentes condições.</p>
+              </div>
+              <div>
+                <h3>Comparação experimental</h3>
+                <p>Realizei experimentos para confrontar as previsões do modelo com o movimento observado, documentando hipóteses, resultados e diferenças em relatórios e apresentações de pesquisa.</p>
+              </div>
+            </div>
+            <div class="tag-list"><span>MATLAB</span><span>Modelagem dinâmica</span><span>Experimentos</span><span>Acústica</span><span>FAPESP</span></div>
+          </div>
+        </article>
+
+        <article class="project-entry" id="aerodesign">
+          <aside class="project-aside">
+            <span class="project-number">Projeto 07</span>
+            <h2>Keep Flying AeroDesign</h2>
+            <div class="project-meta">
+              <div><span class="meta-label">Contexto</span><span>Equipe estudantil · POLI-USP</span></div>
+              <div><span class="meta-label">Atuação</span><span>Capitão e membro de aerodinâmica</span></div>
+              <div><span class="meta-label">Escopo</span><span>Projeto, construção e ensaios</span></div>
+            </div>
+          </aside>
+
+          <div class="project-content">
+            <figure class="project-figure">
+              <!-- A imagem deste projeto poderá substituir o conteúdo abaixo. -->
+              <figcaption>Aeronave e ensaios em voo · a inserir</figcaption>
+            </figure>
+            <p class="project-lead">Desenvolvimento de uma aeronave para competição, conciliando decisões aerodinâmicas, fabricação de protótipos, testes e coordenação de equipe.</p>
+            <div class="project-columns">
+              <div>
+                <h3>Contribuição técnica</h3>
+                <p>Atuei na modelagem aerodinâmica e no desenvolvimento de um código baseado em Vortex Lattice Method, além de participar da construção de protótipos, testes de voo e preparação do relatório técnico.</p>
+              </div>
+              <div>
+                <h3>Liderança</h3>
+                <p>Como capitão, organizei a distribuição de atividades e o acompanhamento do projeto, articulando decisões entre as diferentes frentes de desenvolvimento da aeronave.</p>
+              </div>
+            </div>
+            <div class="tag-list"><span>VLM</span><span>Projeto de aeronaves</span><span>Prototipagem</span><span>Ensaios em voo</span><span>Liderança</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <h2 class="footer-heading">Quer entender como essa experiência se conecta? <a href="trajetoria.html">Veja a trajetória.</a></h2>
+      <div class="footer-links" aria-label="Links externos">
+        <a href="mailto:gabrielhg.01@gmail.com">E-mail ↗</a>
+        <a href="https://www.linkedin.com/in/gabrielhaga/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/GTH14" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+      <p class="footer-note"><span>© 2026 Gabriel Haga</span><span>Projetos · Engenharia mecânica</span></p>
+    </div>
+  </footer>
+</body>
+</html>
