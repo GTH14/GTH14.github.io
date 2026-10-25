@@ -24,25 +24,18 @@ O menu no topo de cada página liga esses arquivos entre si. Ao adicionar uma no
 
 Evite apagar os sinais `<`, `>` e `/`, pois eles estruturam a página.
 
-## Como adicionar as imagens dos projetos
+## Como alterar as imagens dos projetos
 
-Em `projetos.html`, cada projeto contém um bloco como este:
+As imagens utilizadas em `projetos.html` estão na pasta `assets`. Cada projeto contém um bloco semelhante a este:
 
 ```html
-<figure class="project-figure">
-  <figcaption>Imagem do projeto · a inserir</figcaption>
+<figure class="project-figure project-figure--contain has-image">
+  <img src="assets/nome-da-imagem.webp" alt="Descrição objetiva do que aparece na imagem">
+  <figcaption>Legenda da imagem.</figcaption>
 </figure>
 ```
 
-Depois de enviar a imagem ao repositório, preferencialmente para uma pasta `images`, substitua o conteúdo por:
-
-```html
-<figure class="project-figure">
-  <img src="images/nome-da-imagem.webp" alt="Descrição objetiva do que aparece na imagem">
-</figure>
-```
-
-Use nomes sem espaços e imagens em `.webp` ou `.jpg`. Uma proporção próxima de 16:9 funciona melhor no layout atual.
+Para substituir uma imagem, envie o novo arquivo para `assets` e atualize o atributo `src`. Use nomes sem espaços e, preferencialmente, o formato `.webp`. As classes `project-figure--contain`, `project-figure--portrait`, `project-figure--photo` e `project-figure--brand` controlam o enquadramento.
 
 ## Como adicionar um novo projeto
 
@@ -69,4 +62,4 @@ As outras variáveis controlam fundo, texto, linhas e tons auxiliares. A maior p
 
 ## Imagem principal
 
-O eVTOL da página inicial permanece incorporado no próprio `index.html` como uma imagem WebP em Base64. As imagens futuras dos projetos podem ser mantidas como arquivos separados na pasta `images`, o que facilita a atualização.
+O eVTOL da página inicial permanece incorporado no próprio `index.html` como uma imagem WebP em Base64. As imagens dos projetos são arquivos separados na pasta `assets`, o que facilita a atualização.
